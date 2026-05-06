@@ -1,0 +1,67 @@
+.dnd-container {
+    display: flex;
+    height: 50%;
+    width:70%;
+    background-color: rgb(72, 69, 82);
+    margin-left: 20px;
+    border-radius: 20px;
+    justify-content:space-evenly;
+    padding: 20px;
+    gap: 20px;
+}
+
+.dnd-space {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(153, 147, 171);
+ border-radius: 20px;
+  padding: 20px;
+  flex: 1;
+  gap:10px;
+}
+
+.task-item {
+    height: 40px;
+    background-color:  rgb(201, 196, 217);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-item.dragging {
+    background-color: rgb(210, 170, 239);
+    opacity: 0.6;
+    border: 2px solid rgb(188, 139, 233);
+    box-shadow: 0 0 10px rgba(193, 132, 231, 0.5);
+}
+
+.delete-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.delete-icon:hover {
+    opacity: 1;
+}
+
+.add-task {
+    padding:6px;
+    border-radius: 10px;
+     background-color: rgb(144, 126, 204);
+     cursor: pointer;
+}
+
+.add-task:hover {
+    background-color: rgb(170, 157, 211);
+}
+
+.dnd-header {
+    display: flex;
+    justify-content: space-between;
+}
