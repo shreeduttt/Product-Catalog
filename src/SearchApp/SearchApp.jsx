@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./styles.css";
 import DetailsModal from "../Modal/DetailsModal";
-
-export default function App() {
+import Header from "../Header/Header";
+export default function SearchApp() {
   const [data, setData] = useState([]);
   const [searchItem, setSearchItem] = useState("");
   const [filteredData, setFilteredData] = useState([]);
@@ -51,7 +51,7 @@ export default function App() {
 
   return (
     <div className="App" onClick={() => setShowModal(false)}>
-      <h1>Search bar with Debouncing</h1>
+      <Header title="Search bar with Debouncing"/>
       <input className="input" value={searchItem} onChange={(e) => setSearchItem(e.target.value)} onKeyUp={(e) => newFunction.current(searchItem, data,setFilteredData)}/>
       <div className="list-div">
       {filteredData.map((product) => (<div className="list-item" onClick={(e) => handleOnClick(product,e)} key={product.id}>{product.title}</div>))}

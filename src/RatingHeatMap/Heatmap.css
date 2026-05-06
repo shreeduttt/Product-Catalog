@@ -1,0 +1,62 @@
+.heatmap-container {
+  display: flex;
+  flex-direction: column;  
+  font-family: sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #e5d1f1 0%, #b3d9ff 100%);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  align-items: center;
+  overflow: scroll;
+}
+
+.heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.rating-card {
+   display: flex;
+   flex-direction: column;
+   border: 2px solid white;
+   padding: 5px;
+   border-radius: 10px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   min-height: 180px;
+   overflow: scroll;
+   gap: 3px;
+}
+
+.rating-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.show-more {
+    color: gray;
+    cursor: pointer;
+    font-size: small;
+
+}
+
+.show-more:hover {
+    color: rgb(179, 178, 178);
+}
+
+.description {
+    font-size: small;
+}
+
+.yellow-star {
+    color: rgb(245, 245, 120);
+}
+
+.gray-star {
+    color: rgb(152, 152, 152);
+}

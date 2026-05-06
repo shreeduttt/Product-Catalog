@@ -1,5 +1,5 @@
 .app-container {
-    background-color: rgb(222, 210, 234);
+    background: linear-gradient(135deg, #e5d1f1 0%, #b3d9ff 100%);
     width: 100%;
     height: 100%;
 }

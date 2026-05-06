@@ -1,9 +1,8 @@
 .dnd-container {
     display: flex;
-    height: 50%;
-    width:70%;
-    background-color: rgb(72, 69, 82);
-    margin-left: 20px;
+    height: 70%;
+    width:100%;
+    background: linear-gradient(135deg, #e5d1f1 0%, #b3d9ff 100%);
     border-radius: 20px;
     justify-content:space-evenly;
     padding: 20px;
