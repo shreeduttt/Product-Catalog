@@ -6,6 +6,7 @@ import AppDnD from './AppStart/AppDnD';
 import './index.css';
 import LandingPage from './TopicsLandingPage/LandingPage';
 import ProductHeatmap from './RatingHeatMap/ProductHeatmap';
+import TabsComponent from './InterestTabs/TabsComponent';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -18,6 +19,7 @@ root.render(
       <Route path="/drag-n-drop" element={<AppDnD/>} />
       <Route path="/search-app" element={<SearchApp/>} />
       <Route path="/rating-n-heatmap" element={<ProductHeatmap/>} />
+      <Route path="/interest-tabs" element={<TabsComponent/>} />
       <Route path="/" element={<Navigate to="/dashboard"/>}/>
       <Route path="*" element={<Navigate to="/dashboard"/>}/>
     </Routes>

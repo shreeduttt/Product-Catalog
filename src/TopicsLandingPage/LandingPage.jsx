@@ -12,7 +12,7 @@ return (
         <button onClick={() => navigate("/search-app")}>Search Application</button>
         <button onClick={() => navigate("/drag-n-drop")}>Task Drag and Drop </button>
         <button onClick={() => navigate("/rating-n-heatmap")}>Star Ratings and Heatmap </button>
-        <button onClick={() => navigate("/drag-n-drop")}>Person's Interest Tab </button>
+        <button onClick={() => navigate("/interest-tabs")}>Person's Interest Tab </button>
         </div>
     </div>
 )

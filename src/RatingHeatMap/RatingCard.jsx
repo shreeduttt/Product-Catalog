@@ -17,7 +17,7 @@ const RatingCard = ({title, rating, description, price}) => {
     }
 
     return (
-        <div className="rating-card">
+        <div className="rating-card" style={{backgroundColor: `rgb(229, ${50 + (129 * rating * 2/7)}, 77)`}}>
             <h3>{title}</h3>
             <div className="star-rating">
               {[1,2,3,4,5].map((value) => (
