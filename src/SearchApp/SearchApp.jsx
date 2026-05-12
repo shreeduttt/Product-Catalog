@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import "./styles.css";
 import DetailsModal from "../Modal/DetailsModal";
 import Header from "../Header/Header";
@@ -9,7 +9,9 @@ export default function SearchApp() {
   const [product, setProduct] = useState({});
   const [showModal, setShowModal] = useState(false);
 
-  const newFunction = useRef(null);
+  const newFunction = useCallback(debounce((searchItem, data, setFilteredData) => {handleOnEnter(searchItem, data, setFilteredData)}, 300), []);
+
+
   const fetchData = async() => {
      const data = await fetch("https://dummyjson.com/products?limit=100");
      const json = await data.json();
@@ -20,7 +22,6 @@ export default function SearchApp() {
   useEffect(() => {
     console.log("hey");
     fetchData();
-    newFunction.current = debounce(handleOnEnter, 300)
   },[]);
   
   function debounce(fn, d) {
@@ -52,7 +53,7 @@ export default function SearchApp() {
   return (
     <div className="App" onClick={() => setShowModal(false)}>
       <Header title="Search bar with Debouncing"/>
-      <input className="input" value={searchItem} onChange={(e) => setSearchItem(e.target.value)} onKeyUp={(e) => newFunction.current(searchItem, data,setFilteredData)}/>
+      <input className="input" value={searchItem} onChange={(e) => setSearchItem(e.target.value)} onKeyUp={(e) => newFunction(searchItem, data,setFilteredData)}/>
       <div className="list-div">
       {filteredData.map((product) => (<div className="list-item" onClick={(e) => handleOnClick(product,e)} key={product.id}>{product.title}</div>))}
       </div>   

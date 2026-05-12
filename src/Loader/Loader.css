@@ -1,0 +1,65 @@
+.loader-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.loader-container div {
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+    background-color: rgb(54, 143, 160);
+    transition: opacity 0.05s ease-in-out;
+}
+
+.loader-item-1 {
+    position: absolute;
+    left: 50%;
+}
+
+.loader-item-2 {
+    position: absolute;
+    top: 15%;
+    left: 85%;
+}
+
+.loader-item-3 {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+}
+
+.loader-item-4 {
+    position: absolute;
+    top: 85%;
+    left: 85%;
+}
+
+.loader-item-5 {
+    position: absolute;
+    top: 100%;
+    left:50%;
+}
+
+.loader-item-6 {
+    position: absolute;
+    top: 85%;
+    left: 15%;
+}
+
+.loader-item-7 {
+    position: absolute;
+    top: 50%;
+}
+
+.loader-item-8 {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+}
+
+
+
+

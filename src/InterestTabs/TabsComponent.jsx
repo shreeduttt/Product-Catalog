@@ -6,7 +6,28 @@ import { Component, useState } from 'react';
 import Header from '../Header/Header';
 
 const TabsComponent = () => {
-const [PersonalInfo, setPersonalInfo] = useState({});
+const [PersonalInfo, setPersonalInfo] = useState({
+    name: "",
+    age: "",
+    mobile: "",
+    interests: [
+        {   id: "01",
+            label: "Coding",
+            interested: false
+        },
+        {
+            id: "02",
+            label: "Music",
+            interested: false
+        },
+        {
+            id: "03",
+            label: "Travelling",
+            interested: false
+        }
+    ],
+    dark_theme: true 
+});
 const [selectedTab, setSelectedTab] = useState(0);
 
 const tabs = [
@@ -15,7 +36,8 @@ const tabs = [
         title: "Profile",
         component: <Profile 
             PersonalInfo={PersonalInfo} 
-            setPersonalInfo={setPersonalInfo}/>
+            setPersonalInfo={setPersonalInfo}
+            setSelectedTab={setSelectedTab}/>
     },
     {
         id: 1,
@@ -32,6 +54,16 @@ const tabs = [
             setPersonalInfo={setPersonalInfo}/>
     }
 ]    
+
+function handleOnPrev() {
+    setSelectedTab(selectedTab-1);
+}
+function handleOnNext() {
+    setSelectedTab(selectedTab+1);
+}
+function handleOnSubmit() {
+    console.log(PersonalInfo);
+}
 return (
     <div className='tabs-container'>
         <Header title="Person's Interest Tabs"/>
@@ -48,6 +80,7 @@ return (
         <div className='component-container'>
         {tabs[selectedTab].component}
         </div>
+        <div className='footer-container'>{selectedTab !== 0 && <button onClick={handleOnPrev}>Prev</button> }{selectedTab === 2 ? <button onClick={handleOnSubmit}>Submit</button> : <button onClick={handleOnNext}>Next</button>}</div>
     </div>
 )
 }
